@@ -13,7 +13,11 @@ public class GamePanel extends JPanel {
 	 */
 	private static final long serialVersionUID = 1L;
 	
-	public GamePanel() {
+	private GameScreen screen;
+	
+	public GamePanel(GameScreen screen) {
+		
+		this.setScreen(screen);
 		
 	}
 	
@@ -27,7 +31,22 @@ public class GamePanel extends JPanel {
 		/**
 		 * Start Rendering
 		 */
+		screen.getMap().draw(g2d);
 		
+	}
+
+	/**
+	 * @return the screen
+	 */
+	public GameScreen getScreen() {
+		return screen;
+	}
+
+	/**
+	 * @param screen the screen to set
+	 */
+	public void setScreen(GameScreen screen) {
+		this.screen = screen;
 	}
 
 }

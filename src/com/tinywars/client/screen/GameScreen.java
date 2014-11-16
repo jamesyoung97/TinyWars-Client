@@ -5,6 +5,8 @@ import java.awt.Dimension;
 
 import javax.swing.JFrame;
 
+import com.tinywars.client.core.Map;
+
 public class GameScreen extends JFrame implements Runnable {
 	
 	/**
@@ -32,6 +34,27 @@ public class GameScreen extends JFrame implements Runnable {
 	 */
 	private int screenHeight;
 	
+	private Map map;
+	
+	int[][] testMap = {
+			{ 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 },
+			{ 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 },
+			{ 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 },
+			{ 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 },
+			{ 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1 },
+			{ 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1 },
+			{ 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1 },
+			{ 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1 },
+			{ 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1 },
+			{ 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1 },
+			{ 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1 },
+			{ 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1 },
+			{ 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 },
+			{ 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 },
+			{ 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 },
+			{ 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 }
+	};
+	
 	/**
 	 * {@link GameScreen} constructor
 	 * 		builds the JFrame and attaches the {@link GamePanel}
@@ -42,7 +65,7 @@ public class GameScreen extends JFrame implements Runnable {
 		this.setScreenWidth(d.width);
 		this.setScreenHeight(d.width);
 		
-		panel = new GamePanel();
+		panel = new GamePanel(this);
 		
 		this.setTitle(name);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -52,6 +75,9 @@ public class GameScreen extends JFrame implements Runnable {
 		this.setResizable(false);
 		this.setVisible(true);
 		this.setSize(this.getScreenWidth(), this.getScreenHeight());
+		
+		this.setMap(new Map(testMap));
+		
 	}
 
 	/**
@@ -128,4 +154,19 @@ public class GameScreen extends JFrame implements Runnable {
 	public void setScreenHeight(int screenHeight) {
 		this.screenHeight = screenHeight;
 	}
+
+	/**
+	 * @return the map
+	 */
+	public Map getMap() {
+		return map;
+	}
+
+	/**
+	 * @param map the map to set
+	 */
+	public void setMap(Map map) {
+		this.map = map;
+	}
+	
 }
