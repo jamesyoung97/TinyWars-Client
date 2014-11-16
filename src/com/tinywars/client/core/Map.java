@@ -3,8 +3,6 @@ package com.tinywars.client.core;
 import java.awt.Graphics2D;
 import java.util.ArrayList;
 
-import com.tinywars.client.core.Tile;
-
 /**
  * 
  * The Map class creates a new game map and stores
