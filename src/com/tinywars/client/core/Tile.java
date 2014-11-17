@@ -81,12 +81,13 @@ public class Tile {
 	 */
 	public void draw(Graphics2D g) {
 		g.setColor(Color.BLUE);
-
+		
 		if (isMouseOver() == true) {
 			g.fillRect(this.getX(), this.getY(), this.getWidth(), this.getHeight());
 		} else {
 			g.drawRect(this.getX(), this.getY(), this.getWidth(), this.getHeight());
 		}
+		
 	}
 
 	/**
