@@ -37,22 +37,10 @@ public class GameScreen extends JFrame implements Runnable {
 	private Map map;
 	
 	int[][] testMap = {
-			{ 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 },
-			{ 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 },
-			{ 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 },
-			{ 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 },
-			{ 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1 },
-			{ 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1 },
-			{ 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1 },
-			{ 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1 },
-			{ 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1 },
-			{ 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1 },
-			{ 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1 },
-			{ 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1 },
-			{ 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 },
-			{ 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 },
-			{ 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 },
-			{ 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 }
+			{ 1, 1, 1, 1},
+			{ 1, 1, 1, 1},
+			{ 1, 1, 1, 1},
+			{ 1, 1, 1, 1},
 	};
 	
 	/**
@@ -85,12 +73,10 @@ public class GameScreen extends JFrame implements Runnable {
 	 */
 	@Override
 	public void run() {
-        long lastUpdateTime = System.currentTimeMillis();
 
 		while(true)
 		{
-			double now = System.currentTimeMillis();
-			
+
 			/**
 			 * Accept input
 			 */
@@ -104,22 +90,7 @@ public class GameScreen extends JFrame implements Runnable {
 			 */
 			panel.repaint();
 			
-			lastUpdateTime = (long) now;
-			if (now - lastUpdateTime > OPTIMAL_TIME_BETWEEN_UPDATES) { //update took too long
-				System.out.println("World update took: " + (OPTIMAL_TIME_BETWEEN_UPDATES - (now - lastUpdateTime))
-						+ " longer than the optimal update time");
-				try {
-					Thread.sleep((long) (OPTIMAL_TIME_BETWEEN_UPDATES - (now - lastUpdateTime))); //Sleep untill next update 
-				} catch (InterruptedException e) {
-					e.printStackTrace();
-				}
-			} else {
-				try {
-					Thread.sleep((long) (OPTIMAL_TIME_BETWEEN_UPDATES - (now - lastUpdateTime)));
-				} catch (InterruptedException e) {
-					e.printStackTrace();
-				}
-			}
+
 		}
 	}
 

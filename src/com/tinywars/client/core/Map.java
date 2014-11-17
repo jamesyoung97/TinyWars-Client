@@ -37,8 +37,8 @@ public class Map {
 		gameMap = new ArrayList<Tile>();
 		for (int y = 0; y < inMap.length; y++) {
 			for (int x = 0; x < inMap[y].length; x++) {
-				int tileX = 75 + (x * tileWidth / 2) + (y * tileWidth / 2);
-				int tileY = 450 + (y * tileHeight / 2) - (x * tileHeight / 2);
+				int tileX = x * tileWidth;
+				int tileY = y * tileHeight;
 				PlaceTile(inMap.length, tileWidth, tileHeight, tileX, tileY, inMap[x][y]);
 				//System.out.println("Tile created X: " + tileX + " Y:" + tileY + " Type: " + inMap[x][y]);
 			}

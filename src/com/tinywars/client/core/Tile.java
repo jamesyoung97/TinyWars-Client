@@ -2,6 +2,8 @@ package com.tinywars.client.core;
 
 import java.awt.Color;
 import java.awt.Graphics2D;
+import java.awt.Rectangle;
+import java.awt.geom.AffineTransform;
 
 /**
  * 
@@ -82,11 +84,7 @@ public class Tile {
 	public void draw(Graphics2D g) {
 		g.setColor(Color.BLUE);
 		
-		if (isMouseOver() == true) {
-			g.fillRect(this.getX(), this.getY(), this.getWidth(), this.getHeight());
-		} else {
-			g.drawRect(this.getX(), this.getY(), this.getWidth(), this.getHeight());
-		}
+		g.drawRect(this.getX(), this.getY(), this.getWidth(), this.getHeight());
 		
 	}
 
