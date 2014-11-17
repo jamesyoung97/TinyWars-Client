@@ -16,7 +16,7 @@ public class Map {
 	/**
 	 * The tile width
 	 */
-	private final int tileWidth = 64;
+	private final int tileWidth = 32;
 	
 	/**
 	 * The tile height
