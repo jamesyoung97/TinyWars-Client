@@ -82,12 +82,10 @@ public class Tile {
 	 * @param g : the graphics device
 	 */
 	public void draw(Graphics2D g) {
-<<<<<<< HEAD
 		g.setColor(Color.BLUE);
 		
 		g.drawRect(this.getX(), this.getY(), this.getWidth(), this.getHeight());
 		
-=======
 		g.setColor(Color.BLUE);
 
 		if (isMouseOver() == true) {
@@ -95,7 +93,6 @@ public class Tile {
 		} else {
 			g.drawRect(this.getX(), this.getY(), this.getWidth(), this.getHeight());
 		}
->>>>>>> parent of ad008f1... Worked on tile rendering
 	}
 
 	/**
